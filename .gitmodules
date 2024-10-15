@@ -1,0 +1,12 @@
+[submodule "hs-coexp"]
+	path = hs-coexp
+	url = https://github.com/vikraman/hs-coexp
+[submodule "sml-coexp"]
+	path = sml-coexp
+	url = https://github.com/vikraman/sml-coexp
+[submodule "agda-coexp"]
+	path = agda-coexp
+	url = https://github.com/vikraman/agda-coexp
+[submodule "descartes"]
+	path = descartes
+	url = https://github.com/vikraman/descartes
