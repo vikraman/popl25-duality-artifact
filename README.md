@@ -2,12 +2,12 @@
 
 [![docker](https://github.com/vikraman/popl25-duality-artifact/actions/workflows/docker.yml/badge.svg)](https://hub.docker.com/r/vikraman/popl25-duality-artifact)
 [![docker pulls](https://img.shields.io/docker/pulls/vikraman/popl25-duality-artifact.svg)](https://hub.docker.com/r/vikraman/popl25-duality-artifact)
-[![doi](https://zenodo.org/badge/R_kgDONAhn-A.svg)](https://zenodo.org/badge/latestdoi/R_kgDONAhn-A)
+[![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.13939452.svg)](https://doi.org/10.5281/zenodo.13939452)
 
 This repository contains accompanying formalisation for the paper "The Duality of Abstraction". (the title is not finalised yet)
 
 - Main Repository: https://github.com/vikraman/popl25-duality-artifact
-- Zenodo: pending
+- Zenodo: https://doi.org/10.5281/zenodo.13939452
 
 The artifact provides:
 
