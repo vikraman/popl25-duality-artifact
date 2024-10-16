@@ -11,10 +11,10 @@ This repository contains accompanying formalisation for the paper "The Duality o
 
 The artifact provides:
 
-- hs-coexp: a Haskell library for coexponentials using the Cont monad
-- sml-coexp: an SML library for coexpoentials using native continuations
-- descartes: an OCaml interpreter for λλ̃ which implements the operational semantics
-- agda-coexp: an Agda formalisation of the λλ̃, κ/ζ, κ̃/ζ̃ calculi, and their semantics
+- [hs-coexp](https://github.com/vikraman/hs-coexp): a Haskell library for coexponentials using the Cont monad
+- [sml-coexp](https://github.com/vikraman/sml-coexp): an SML library for coexpoentials using native continuations
+- [descartes](https://github.com/vikraman/descartes): an OCaml interpreter for λλ̃ which implements the operational semantics
+- [agda-coexp](https://github.com/vikraman/agda-coexp): an Agda formalisation of the λλ̃, κ/ζ, κ̃/ζ̃ calculi, and their semantics
 
 ## Installation
 
