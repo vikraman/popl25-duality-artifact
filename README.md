@@ -1,5 +1,5 @@
 # Artifact for The Duality of Abstraction
-[![ci](https://github.com/vikraman/popl25-duality-artifact/actions/workflows/ci.yml/badge.svg)](https://github.com/vikraman/popl25-duality-artifact)
+
 [![docker](https://github.com/vikraman/popl25-duality-artifact/actions/workflows/docker.yml/badge.svg)](https://hub.docker.com/r/vikraman/popl25-duality-artifact)
 [![docker pulls](https://img.shields.io/docker/pulls/vikraman/popl25-duality-artifact.svg)](https://hub.docker.com/r/vikraman/popl25-duality-artifact)
 [![doi](https://zenodo.org/badge/R_kgDONAhn-A.svg)](https://zenodo.org/badge/latestdoi/R_kgDONAhn-A)
@@ -47,7 +47,3 @@ $ docker run -it --rm vikraman/popl25-duality-artifact
 ## Evaluation
 
 See the README files in each submodule.
-
-## Documentation
-
-### Comments
