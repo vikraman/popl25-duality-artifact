@@ -23,12 +23,28 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
     apt install -y ocaml-nox opam dune rlwrap emacs-nox
 
+# Copy configuration files
 COPY vendor/dot-emacs /root/.emacs
 COPY vendor/agda-libraries /root/.agda/libraries
 COPY vendor/agda-defaults /root/.agda/defaults
 
+# Copy artifacts
 VOLUME   /artifact/
 COPY   . /artifact/
 WORKDIR  /artifact/
+
+# Build each artifact
+RUN cd agda-coexp && \
+    agda index.agda
+RUN cd hs-coexp && \
+    cabal build && \
+    cabal test
+RUN cd sml-coexp && \
+    echo 'CM.make "coexp.cm";' | sml
+RUN cd descartes && \
+    opam init --disable-sandboxing --auto-setup && \
+    opam install . --deps-only --with-test --yes && \
+    opam exec -- dune build && \
+    opam exec -- dune runtest
 
 ENTRYPOINT [ "bash" ]
