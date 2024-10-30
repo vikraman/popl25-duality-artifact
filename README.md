@@ -34,6 +34,13 @@ Each part of the artifact is packaged using the standard packaging mechanism for
 
 The repositories are also continuously built and checked using the GitHub Actions CI.
 
+At the time of writing, the artifact has been tested with:
+
+- GHC 9.10.1 and cabal 3.12.1.0
+- SML/NJ 110.99.6.1
+- OCaml 5.12.0 and dune 3.16.0
+- Agda 2.7.0.1 and agda-stdlib 2.1.1
+
 ### Option 2: Using our docker image
 
 We also provide a prebuilt docker image with everything installed.
@@ -46,4 +53,92 @@ $ docker run -it --rm vikraman/popl25-duality-artifact
 
 ## Evaluation
 
-See the README files in each submodule.
+For specific instructions, see the README files in each submodule.
+
+The mapping between the sections of the paper and the Agda formalisation is as follows.
+
+#### Section 2
+
+The syntax of the λλ̃ calculus is formalised in the `Coexp.LamLamBar.Syntax` module.
+
+| Claim     | Formalisation |
+| --------- | ------------- |
+| Theorem 1 | `wk-tm`       |
+|           | `sub-tm`      |
+
+#### Section 3
+
+The categorical structure used in the semantics is defined in the `Coexp.Semantics` module,
+using Agda's `Set` as the semantic domain,
+and using a fixed result type `R` as a module parameter to get a continuation monad.
+These categorical combinators are used in the interpretation in the `Coexp.LamLamBar.Interp` module.
+
+| Claim     | Formalisation      |
+| --------- | ------------------ |
+| Figure 3  | `evalTm`           |
+| Figure 4  | `interpTy`         |
+|           | `interpCtx`        |
+| Figure 5  | `interpTm`         |
+| Figure 6  | `interpIn`         |
+|           | `interpWk`         |
+| Figure 7  | `interpVal`        |
+|           | `interpSub`        |
+| Theorem 8 | `interpVal-tm-coh` |
+|           | `interpWk-tm-coh`  |
+|           | `interpSub-tm-coh` |
+| Theorem 9 | `adequacy`         |
+
+#### Section 4
+
+The equational theory is formalised as part of the syntax in the `Coexp.LamLamBar.Syntax` module.
+Some evaluation contexts and equations are skipped in the formalisation.
+
+| Claim      | Formalisation |
+| ---------- | ------------- |
+| Theorem 11 | `interpEq`    |
+
+Note that the theorem in the paper holds for the axiomatic categorical structure,
+but the formalisation works directly in Agda's type theory,
+hence skipping some tedious coherences which become `refl` in the Agda formalisation.
+
+#### Section 5
+
+The paper develops the syntax of κ/ζ, κ̃/ζ̃ calculi categorically,
+and the formalisation implements it concretely, in the respective `Syntax` modules.
+Additionally, an intepretation of each calculus is given in the `Interp` modules,
+using the categorical structure of the semantics previously defined.
+
+| Claim     | Formalisation           |
+| --------- | ----------------------- |
+| Figure 10 | `Coexp.Kappa.Syntax`    |
+|           | `Coexp.Zeta.Syntax`     |
+| Figure 11 | `Coexp.KappaBar.Syntax` |
+|           | `Coexp.ZetaBar.Syntax`  |
+
+#### Section 6
+
+The examples are implemented in the SML artifact.
+
+| Claim                     | Implementation                      |
+| ------------------------- | ----------------------------------- |
+| Functions and Cofunctions | `Examples.ex1`                      |
+| Exceptional cofunctions   | `Examples.mult0` - `Examples.mult5` |
+| Algebra of cofunctions    | `Classical`                         |
+| Implementaion in SML      | `Coexp`                             |
+
+The Haskell implementaion is in the Haskell artifact.
+Note that the type of `curry`/`uncurry` is swapped in the Haskell prelude,
+hence some of the type signatures of the combinators are swapped compared to the paper.
+
+| Claim                     | Implementation               |
+| ------------------------- | ---------------------------- |
+| Implementation in Haskell | `Data.Coexp`                 |
+|                           | `Control.Monad.Control`      |
+| Backtracking combinators  | `Data.Coexp.Backtrack`       |
+| SAT Solver                | `Examples.SAT.Backtrack`     |
+|                           | `Examples.SAT.Guess`         |
+| Tree search               | `Examples.TS`                |
+| Effect handlers           | `Control.Monad.Free.Control` |
+|                           | `Examples.Eff.Toss`          |
+
+The typechecker and interpreter for λλ̃ is implemented in the OCaml artifact.
