@@ -1,10 +1,10 @@
-# Artifact for The Duality of Abstraction
+# Artifact for The Duality of $\lambda$ Abstraction
 
 [![docker](https://github.com/vikraman/popl25-duality-artifact/actions/workflows/docker.yml/badge.svg)](https://github.com/vikraman/popl25-duality-artifact/actions/workflows/docker.yml)
 [![docker pulls](https://img.shields.io/docker/pulls/vikraman/popl25-duality-artifact.svg)](https://hub.docker.com/r/vikraman/popl25-duality-artifact)
 [![doi](https://zenodo.org/badge/DOI/10.5281/zenodo.13939451.svg)](https://doi.org/10.5281/zenodo.13939451)
 
-This repository contains accompanying formalisation for the paper "The Duality of Abstraction". (the title is not finalised yet)
+This repository contains accompanying formalisation for the paper: The Duality of $\lambda$ Abstraction.
 
 - Main Repository: https://github.com/vikraman/popl25-duality-artifact
 - Zenodo: https://doi.org/10.5281/zenodo.13939451
