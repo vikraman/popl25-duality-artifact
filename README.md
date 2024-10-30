@@ -53,7 +53,7 @@ $ docker run -it --rm vikraman/popl25-duality-artifact
 
 ## Evaluation
 
-For specific instructions, see the README files in each submodule.
+For specific instructions for each part of the artifact, see the README files in each submodule.
 
 The mapping between the sections of the paper and the Agda formalisation is as follows.
 
@@ -126,8 +126,8 @@ The examples are implemented in the SML artifact.
 | Algebra of cofunctions    | `Classical`                         |
 | Implementaion in SML      | `Coexp`                             |
 
-The Haskell implementaion is in the Haskell artifact.
-Note that the type of `curry`/`uncurry` is swapped in the Haskell prelude,
+The Haskell implementation is in the Haskell artifact.
+Note that the type of `curry`/`uncurry` is swapped in Haskell's prelude,
 hence some of the type signatures of the combinators are swapped compared to the paper.
 
 | Claim                     | Implementation               |
